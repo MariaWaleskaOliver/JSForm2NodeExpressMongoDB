@@ -1,0 +1,49 @@
+<%- include('layouts/header') -%>
+<header>
+    <h1>Maria Waleska Marinho de Oliveira / 8751749 </h1>
+</header>
+<nav class="top_menu">
+    <ul>
+      <li>
+        <a href="/">Shop</a>
+     </li>
+     <li>
+       <a href="/allorders">View Orders </a>
+    </li>
+    </ul>
+ </nav>
+ <body>
+    <h2>Your orders</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>id</th>
+            <th>HTML5 Books </th>
+            <th>CSS3 Books</th>
+            <th>Pens </th>
+            <th>SubTotal</th>
+            <th>tax</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let product of products) { %>
+        <tr>
+            <td><%=product.name %></td>
+            <td><%=product.id %></td>
+            <td><%=product.prod1%></td>
+            <td><%=product.prod2%></td>
+            <td><%=product.prod3%></td>
+            <td><%=product.subTotal%></td>
+            <td><%=product.tax%></td>
+            <td><%=product.total%></td>
+        </tr>
+        <% } %>
+    </tbody>
+    </table>
+
+ </body>
+
+<footer> &copy; - Maria Waleska Marinho de Oliveira </footer>

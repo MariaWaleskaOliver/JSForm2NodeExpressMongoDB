@@ -1,0 +1,100 @@
+<%- include('layouts/header') -%>
+
+<header>
+    <h1>Maria Waleska Marinho de Oliveira / 8751749 </h1>
+</header>
+
+<nav class="top_menu">
+    <ul>
+      <li>
+        <a href="/">Shop</a>
+     </li>
+     <li>
+       <a href="/allorders">View Orders </a>
+    </li>
+    </ul>
+ </nav>
+
+<body>
+    <section class="w50">
+
+        <form name ="myform" method="Post" onsubmit="return formSubmit();" action="">
+           
+            <label >Name : </label>
+            <input id ="name" type="text" name="name"> <br>
+            
+            <label >Student ID :</label>
+            <input id ="id" type="number" name="id"> <br>
+           
+
+            <label for="prod1">HTML5 Books : $62.99 </label>
+            <input type="number" id="prod1" name="prod1">
+    
+            
+            <label for="prod2">CSS3 Books : $51.99</label>
+            <input type="number" id="prod2" name="prod2">
+    
+            <label for="prod2">Pens :$2.99 </label>
+            <input type="number" id="prod3" name="prod3">
+    
+            <input type="submit" name="submit" id="submit">
+        </form>
+    
+    </section>
+
+    <section class="w50">
+    <div class="formData">
+    
+        <% if(typeof(errors) != 'undefined') {
+            for(let error of errors) { %>
+                <p> <%= error.msg %></p>
+        <%   }
+        } %>
+
+        <% if(typeof(name) != 'undefined') { %>
+            <p>Your receipt, Thank you </p>
+            <table>
+                <tr>
+                    <th>Name :</th>
+                    <td><%= name %></td>
+                </tr>
+                <tr>
+                    <th> Id :</th>
+                    <td><%= id %></td>
+                </tr>
+
+                <tr>
+                    <th> HTML5 Books Quantity : </th>
+                    <td><%=prod1 %></td>
+                </tr>
+
+                <tr>
+                    <th>CSS3 Books Quantity : </th>
+                    <td><%=prod2 %></td>
+                </tr>
+
+                <tr>
+                    <th>Pens Quantity : </th>
+                    <td><%=prod3 %></td>
+                </tr>
+
+                <tr>
+                    <th>SubTotal</th>
+                    <td><%=subTotal %></td>
+                </tr>
+
+                <tr>
+                    <th>Tax</th>
+                    <td><%tax %></td>
+                </tr>
+
+                <tr>
+                    <th>Total</th>
+                    <td><%=total %></td>
+                </tr>
+            </table>
+        <% } %>
+    </div>
+</section>
+</body>
+<footer> &copy; - Maria Waleska Marinho de Oliveira </footer>
